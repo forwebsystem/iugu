@@ -8,22 +8,8 @@
 
 ## Instalação
 
-Faça o download da biblioteca:
-
 ```
-git clone https://github.com/iugu/iugu-php
-```
-
-Inclua a biblioteca em seu arquivo PHP:
-
-```php
-require_once(".../iugu-php/lib/Iugu.php");
-```
-
-### Usando Composer
-
-```
-$ composer require iugu/iugu
+$ composer require forwebsystem/iugu
 Please provide a version constraint for the iugu/iugu requirement: 1.0.6
 ```
 
