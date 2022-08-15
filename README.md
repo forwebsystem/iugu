@@ -39,6 +39,13 @@ Iugu_Charge::create(
 
 Acesse [iugu.com/documentacao](http://iugu.com/documentacao) para referência
 
+### Log de requisição
+
+Para capturar as requisições disparadas só cria uma função com os seguintes parâmetros
+```
+log_iugu_request($method, $url, $data, $exception ?? null, $response ?? null);
+```
+
 ## Testes
 
 Instale as dependências:
