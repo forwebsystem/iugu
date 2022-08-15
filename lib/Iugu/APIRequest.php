@@ -19,6 +19,7 @@ class Iugu_APIRequest
 
     public function request($method, $url, $data = [])
     {
+        try {
         global $iugu_last_api_response_code;
 
         if (Iugu::getApiKey() == null) {
@@ -73,6 +74,14 @@ class Iugu_APIRequest
         $iugu_last_api_response_code = $response_code;
 
         return $response;
+        } catch ( \Exception $ex) {
+            $exception = $ex;
+            throw $ex;
+        } finally {
+            if( function_exists('log_iugu_request') ){
+                log_iugu_request($method, $url, $data, $exception ?? null, $response ?? null);
+            }
+        }
     }
 
     private function encodeParameters($method, $url, $data = [])
