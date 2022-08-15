@@ -79,7 +79,7 @@ class Iugu_APIRequest
             throw $ex;
         } finally {
             if( function_exists('log_iugu_request') ){
-                log_iugu_request($method, $url, $data, $exception ?? null, $response ?? null);
+                log_iugu_request($method, $url, $data, $response ?? null, $iugu_last_api_response_code ?? null, $headers ?? [], $exception ?? null);
             }
         }
     }
