@@ -39,6 +39,11 @@ class Iugu_Object implements ArrayAccess
         return $this->offsetGet($key);
     }
 
+    public function toArray()
+    {
+        return json_decode(json_encode($this->_attributes), true );
+    }
+  
     public function offsetSet($key, $value)
     {
         $this->_attributes[$key] = $value;
